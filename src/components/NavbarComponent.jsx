@@ -1,40 +1,27 @@
 import React from 'react'
-import { Avatar, Dropdown, Navbar } from "flowbite-react";
+import { FaCartShopping } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 function NavbarComponent() {
-  return (
-    <Navbar fluid className="bg-orange-500">
-      <Navbar.Brand href="#">
-        <img src="/image/logo.png" className="mr-3 h-6 sm:h-9" alt="logo" />
-      </Navbar.Brand>
 
-      <div className="flex md:order-2">
-        <Dropdown
-          arrowIcon={false}
-          inline
-          label={
-            <Avatar
-              alt="User settings"
-              img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-              rounded
-            />
-          }
-        >
-          <Dropdown.Header>
-            <span className="block text-sm">Bonnie Green</span>
-            <span className="block truncate text-sm font-medium">
-              name@flowbite.com
-            </span>
-          </Dropdown.Header>
-          <Dropdown.Item>Dashboard</Dropdown.Item>
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Earnings</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item>Sign out</Dropdown.Item>
-        </Dropdown>
-        <Navbar.Toggle />
+  return (
+    <nav className='flex justify-between items-center px-[160px] pt-[50px] pb-[25px] border-b-[2px]'>
+      <h1 className='text-3xl font-semibold'>Angkor Shop</h1>
+
+      <ul className='flex gap-10 text-lg'>
+        <Link to="/">Home</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/about">About</Link>
+        <Link to="/sign-up">Sign Up</Link>
+      </ul>
+
+      <div className='flex items-center gap-4'>
+        <input type="text" name="search" id="search" placeholder="search..." className='rounded-lg'/>
+        <button>
+          <FaCartShopping className='w-7 h-7'/>
+        </button>
       </div>
-    </Navbar>
+    </nav>
   );
 }
 

@@ -76,7 +76,7 @@ function ProductCard() {
             </div>
             <div className="flex items-center justify-between">
               <span className="text-3xl font-bold text-gray-900 dark:text-white">
-                ${product.price}
+                ៛{product.price}
               </span>
               <a
                 href="#"
