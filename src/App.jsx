@@ -11,6 +11,7 @@ import Contact from "./page/contact/Contact";
 import About from "./page/about/About";
 import Signup from "./page/signup/Signup";
 import NotFound from "./page/not_found/NotFound";
+import ProductDetail from "./page/productDetail/ProductDetail";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/sign-up" element={<Signup />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
         </Route>
 
         <Route path="/dash" element={<MainLayout />}>

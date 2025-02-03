@@ -2,7 +2,8 @@ import React from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import CardProductComponent from "./CardProductComponent";
 
-function SpecialComponent() {
+function SpecialComponent({ products }) {
+  // console.log("props", products);
   return (
     <section className="px-[160px]">
       {/* today's */}
@@ -61,12 +62,15 @@ function SpecialComponent() {
 
       {/* product card */}
       <div className="flex gap-5 overflow-auto">
-        <CardProductComponent />
-        <CardProductComponent />
-        <CardProductComponent />
-        <CardProductComponent />
-        <CardProductComponent />
-        <CardProductComponent />
+        {products.map((product) => (
+          <CardProductComponent key={product.id} product={product} />
+        ))}
+      </div>
+
+      <div className="flex justify-center items-center py-10">
+        <button className="bg-orange-500 py-3 px-5 text-white rounded-md">
+          View All Products
+        </button>
       </div>
     </section>
   );
