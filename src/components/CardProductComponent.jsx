@@ -10,13 +10,13 @@ function CardProductComponent({ product }) {
     <div className="group">
       <div className="w-[300px] h-[300px] bg-gray-200 relative flex justify-center items-center rounded-md overflow-hidden">
         <img
-          src={product.images[0]}
+          src={product?.image}
           alt="product"
           className="w-[140px] h-[140px]"
         />
 
         <p className="bg-orange-500 px-3 py-1 rounded-lg text-white absolute top-3 left-3">
-          -{product.discountPercentage}%
+          -{product?.discountPercentage}%
         </p>
 
         <div className="absolute top-3 right-4 flex flex-col gap-2">
@@ -29,7 +29,7 @@ function CardProductComponent({ product }) {
         </div>
 
         <button
-          onClick={() => navigate(`/products/${product.id}`)}
+          onClick={() => navigate(`/products/${product?.id}`)}
           className="bg-black w-[300px] text-white absolute bottom-0 py-3 hidden group-hover:block"
         >
           Add To Cart
@@ -37,16 +37,16 @@ function CardProductComponent({ product }) {
       </div>
 
       <div className="mt-5">
-        <p>{product.title}</p>
+        <p>{product?.title}</p>
         <p className="flex gap-3">
-          <span className="text-red-500">${product.price}</span>
+          <span className="text-red-500">៛{product?.price}</span>
           {/* <s className="text-gray-500">$120</s> */}
         </p>
         <div className="flex items-center gap-3">
           <Rating>
             <Rating.Star />
           </Rating>
-          <p>({product.rating})</p>
+          <p>({product?.rating})</p>
         </div>
       </div>
     </div>

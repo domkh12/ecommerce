@@ -62,7 +62,7 @@ function SpecialComponent({ products }) {
 
       {/* product card */}
       <div className="flex gap-5 overflow-auto">
-        {products.map((product) => (
+        {products?.map((product) => (
           <CardProductComponent key={product.id} product={product} />
         ))}
       </div>

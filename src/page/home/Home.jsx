@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import HeroSectionsComponent from "./../../components/HeroSectionsComponent";
 import SpecialComponent from "../../components/SpecialComponent";
+import CategoryComponent from "../../components/CategoryComponent";
+import { HR } from "flowbite-react";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -8,10 +10,10 @@ function Home() {
   // Fetch products
   useEffect(() => {
     const fetchProducts = async () => {
-      await fetch("https://dummyjson.com/products")
+      await fetch("http://localhost:16800/api/v1/products")
         .then((response) => response.json())
         .then((data) => {
-          setProducts(data.products);
+          setProducts(data);
         });
     };
     fetchProducts();
@@ -23,6 +25,9 @@ function Home() {
     <>
       <HeroSectionsComponent />
       <SpecialComponent products={products} />
+      <HR />
+      <CategoryComponent />
+      <HR />
     </>
   );
 }
